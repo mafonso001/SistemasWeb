@@ -1,0 +1,16 @@
+body{
+	background-color: grey;
+}
+
+#register{
+	border-radius: 2px;
+	border-width: 2px;
+	border-color: white;
+	max-width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+}
+#footer{
+	text-align: center;
+}

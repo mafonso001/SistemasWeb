@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="estilos/register.css" media="screen" />
+	<script type="text/javascript" src="scripts/scriptValores.js"></script>
+  </head>
+  <body>
+	<div id="register">
+				<form id='registro' name='registro' onSubmit='vervalores()'>
+  				Nombre*:<br/>
+  				<input type="text" name="nombre" value="" /><br/>
+   				Apellidos*:<br/>
+  				<input type="text" name="apellidos" value="" /><br/>
+   				Password*:<br/>
+  				<input type="text" name="contraseña" value="" /> <br/>
+  				Numero de telefono*:<br/>
+  				<input type="text" name="telefono" value="" /><br/>
+   				Foto*:<br/>
+  				<input type="file" name="foto" value="" /><br/>
+  				<br/>				
+  				<label for="Esp">Especialidad</label> <br/>
+					<select id="Esp" name="Esp">
+					  <option value="" selected="selected">- selecciona -</option>
+					  <option value="Ingenieria del Software">Ingenieria del Software</option>
+					  <option value="Arquitectura de Computadores">Arquitectura de Computadores</option>
+					  <option value="Computacion">Computacion</option>
+					  <option value="otro">Otro</option>
+					</select>
+					<br/>
+  				Tecnologias y herramientas en *:<br/>
+  				<input type="textArea" name="nombre" value="" />
+
+  				<br/>
+ 
+  				<input type="submit" value="Enviar" />
+			</form>
+		
+	</div>
+	<div id="footer">
+		<a href="layout.html">Inicio</a>
+	</div>
+</body>
+</html>
