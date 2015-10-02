@@ -6,16 +6,17 @@
 	<script type="text/javascript" src="scripts/scriptValores.js"></script>
   <script type="text/javascript" src="scripts/scriptValidadores.js"></script>
   <script type="text/javascript" src="scripts/scriptAñadirCampos.js"></script>
+  <?php include ('prueba.php'); ?>
   </head>
   <body>
 	<div id="register">
-				<form id="registro" name="registro" onsubmit="validarFormulario()">
+				<form action="registrar.php" method="POST" id="registro" onsubmit="validarFormulario()">
   				Nombre*:<br/>
   				<input type="text" id="nombre" name="nombre" /><br/>
    				Apellidos*:<br/>
   				<input type="text" id="apellido" name="apellido"/><br/>
    				Password*:<br/>
-  				<input type="password" id="contraseña" name="contraseña" onblur="validarContraseña()"/> <br/>
+  				<input type="password" id="pass" name="pass" onblur="validarContraseña()"/> <br/>
   				Numero de telefono*:<br/>
   				<input type="text" id="telefono" name="telefono" onblur="validarTelefono()"/><br/>
           Email*:<br/>
@@ -34,7 +35,7 @@
           <input type="button" value="Otro" onclick="AgregarCampos()" />
           <br/>
   				Tecnologias y herramientas en *:<br/>
-  				<input type="textArea" name="nombre" value="" />
+  				<input type="textArea" name="tecnologias" id="tecnologias" value="" />
 
   				<br/>
  
