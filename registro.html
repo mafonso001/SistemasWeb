@@ -10,7 +10,7 @@
   </head>
   <body>
 	<div id="register">
-				<form action="registrar.php" method="POST" id="registro" onsubmit="validarFormulario()">
+				<form onsubmit="return validarFormulario()" method="POST" enctype="multipart/form-data" id="registro" action="RegistrarConFoto.php">
   				Nombre*:<br/>
   				<input type="text" id="nombre" name="nombre" /><br/>
    				Apellidos*:<br/>
@@ -22,7 +22,7 @@
           Email*:<br/>
           <input type="text" id="email" name="email" onblur="validarEmail()"/><br/>          
    				Foto*:<br/>
-  				<input type="file" name="foto" value="" /><br/>
+  				<input name="uploadedfile" type="file" />
   				<br/>				
   				<label for="Esp">Especialidad</label> <br/>
 					<select id="Esp" name="Esp">

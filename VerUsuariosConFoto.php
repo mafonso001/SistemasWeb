@@ -40,7 +40,7 @@
 							echo "<td>".$extraido['Apellidos']."</td>";
 							echo "<td>".$extraido['Telefono']."</td>";
 							echo "<td>".$extraido['Email']."</td>";
-							echo "<td>".$extraido['Especialidad']."</td>";
+							echo "<td><img src=".$extraido['Foto']."></td>";
 							echo "<td>".$extraido['Tecnologias']."</td>";
 
 							echo "</tr>";
