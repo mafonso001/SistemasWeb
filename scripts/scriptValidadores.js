@@ -6,7 +6,7 @@
 
 		function validarContraseña() {
             expr = /^([a-zA-Z0-9]{6,})$/;
-            if ( !expr.test(document.getElementById('contraseña').value || document.getElementById('contraseña').value=="") )
+            if ( !expr.test(document.getElementById('pass').value || document.getElementById('pass').value=="") )
                 alert("Error: La contraseña es incorrecta, o no ha sido rellenada");
         }
 

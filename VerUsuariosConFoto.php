@@ -36,11 +36,13 @@
 							mysqli_data_seek ($result, $i);
 							$extraido= mysqli_fetch_array($result);
 
+							$tam = 40;
+
 							echo "<td>".$extraido['Nombre']."</td>";
 							echo "<td>".$extraido['Apellidos']."</td>";
 							echo "<td>".$extraido['Telefono']."</td>";
 							echo "<td>".$extraido['Email']."</td>";
-							echo "<td><img src=".$extraido['Foto']."></td>";
+							echo "<td><img src=".$extraido['Foto']." width='".$tam."' height='".$tam."'></td>";
 							echo "<td>".$extraido['Tecnologias']."</td>";
 
 							echo "</tr>";
