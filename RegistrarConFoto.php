@@ -18,6 +18,8 @@
 		} 
 
 		$valor = $_POST['email'];
+		$pass = $_POST['pass'];
+		$telefono = $_POST['telefono'];
 
 		if(filter_var($valor, FILTER_VALIDATE_EMAIL) == FALSE){
 
@@ -33,9 +35,9 @@
 
 			}else{
 
-				if (!preg_match("/^([a-zA-Z0-9_\.\-])+\@ikasle.ehu.es|\@ikasle.ehu.eus+$/",$valor)) {
+				if ((!preg_match("/^([a-zA-Z0-9_\.\-])+\@ikasle.ehu.es|\@ikasle.ehu.eus+$/",$valor)) || (!preg_match("/^([a-zA-Z0-9]{6,})$/",$pass)) || (!preg_match("/^\d{9}$/",$telefono))) {
 
-						echo "El email no es correcto, no se ha podido registrar";
+						echo "error al validar en el servidor, no se ha podido registrar";
 
 						return false;
 
