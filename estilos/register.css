@@ -14,3 +14,13 @@ body{
 #footer{
 	text-align: center;
 }
+
+#insertarPregunta{
+	border-radius: 2px;
+	border-width: 2px;
+	border-color: white;
+	max-width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+}
