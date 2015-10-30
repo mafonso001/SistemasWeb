@@ -4,17 +4,10 @@
 
 <body>
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "quiz";
+	include("funciones.php");
 
 	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
-	} 
+	$conn = connect();
 
 	//$tildes = $link->query("SET NAMES 'utf8'"); //Para que se muestren las tildes
 

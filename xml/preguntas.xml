@@ -37,4 +37,12 @@
       <value>blanco</value>
     </correctResponse>
   </assessmentItem>
+  <assessmentItem complexity="2" subject="Informatica">
+    <itemBody>
+      <p>&#xBF;Cual fue el primer Navegador?</p>
+    </itemBody>
+    <correctResponse>
+      <value>NetScape</value>
+    </correctResponse>
+  </assessmentItem>
 </assessmentItems>
