@@ -17,7 +17,7 @@
 			//el usu exite con esa contraseña
 		$conn->close();
 		//echo "el usuario si existe";
-	    header("Location: InsertarPregunta.html");
+	    header("Location: GestionPreguntas.php");
 			//cambio la localizacion de este archivo== lo redirije
 			//la base de datos sigue abierta
 	} else {

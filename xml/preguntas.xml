@@ -45,4 +45,68 @@
       <value>NetScape</value>
     </correctResponse>
   </assessmentItem>
+  <assessmentItem complexity="1" subject="dos">
+    <itemBody>
+      <p>Hola?</p>
+    </itemBody>
+    <correctResponse>
+      <value>hola!</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="caca">
+    <itemBody>
+      <p>Buenas</p>
+    </itemBody>
+    <correctResponse>
+      <value>Hola</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="">
+    <itemBody>
+      <p>Hola?</p>
+    </itemBody>
+    <correctResponse>
+      <value>NetScape</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="A por todas">
+    <itemBody>
+      <p>Hola?</p>
+    </itemBody>
+    <correctResponse>
+      <value>caca</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="dada">
+    <itemBody>
+      <p>Esta sera la pregunta correcta?</p>
+    </itemBody>
+    <correctResponse>
+      <value>Esperemos que si</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="dada">
+    <itemBody>
+      <p>Habra funcionado?</p>
+    </itemBody>
+    <correctResponse>
+      <value>Esperemos que si</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="dada">
+    <itemBody>
+      <p>Esstoy usando Ajax?</p>
+    </itemBody>
+    <correctResponse>
+      <value> si</value>
+    </correctResponse>
+  </assessmentItem>
+  <assessmentItem complexity="1" subject="dada">
+    <itemBody>
+      <p>Esstoy usando Ajax?</p>
+    </itemBody>
+    <correctResponse>
+      <value> si</value>
+    </correctResponse>
+  </assessmentItem>
 </assessmentItems>
