@@ -3,6 +3,21 @@
   <head>
     <script language = "javascript">
 
+
+    function contador(){
+      divResultado = document.getElementById('contador');
+      ajax=objetoAjax();
+
+      ajax.onreadystatechange=function() {
+        if (ajax.readyState==4) {
+          divResultado.innerHTML = ajax.responseText;
+        }
+      }
+
+      ajax.open("GET", "cont_user.php");
+      ajax.send(null)
+    }
+
     function insertQuestion() { //Asíncrono
         if (typeof window.ActiveXObject != 'undefined' ) {
           req = new ActiveXObject("Microsoft.XMLHTTP");
@@ -29,49 +44,6 @@
         req.send(params);
         //req.send("pregunta=ddd&respuesta=aaaa&comple=1");
     }
-
-
-    /*function viewQuestions(){
-      if (window.XMLHttpRequest){
-        // Objeto para IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-      }else{
-        // Objeto para IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-
-      xmlhttp.onreadystatechange=function(){
-        if(xmlhttp.readyState==4 && xmlhttp.status==200){
-          // Obtenemos un objeto XMLDocument con el contenido del archivo xml del servidor
-          xmlDoc=xmlhttp.responseXML;
-          // Obtenemos todos los nodos denominados foro del archivo xml
-          var assessmentItem=xmlDoc.getElementsByTagName("assessmentItem");
-
-          tabla="<table border=1>";
-          // Hacemos un bucle por todos los elementos foro
-          for(var i=0;i<assessmentItem.length;i++)
-          {
-            // Del elemento foro, obtenemos del primer elemento denominado "titulo"
-            // el valor del primer elemento interno
-            pregunta=assessmentItem[i].getElementsByTagName("p")[0].childNodes[0].nodeValue
-           
-            respuesta=assessmentItem[i].getElementsByTagName("value")[0].childNodes[0].nodeValue
-           
-            
-            tabla+="<tr><td>"+pregunta+" 1</td></tr>";
-            //tabla+="<tr><td>"+respuesta+" 2</td></tr>";
-            
-          }
-          tabla+="</table>";
-          document.getElementById("respuesta2").innerHTML = tabla;
-        }
-      }
-       
-      // Abrimos el archivo que esta alojado en el servidor cd_catalog.xml
-
-      xmlhttp.open("GET","xml/preguntas.xml",false);
-      xmlhttp.send();
-    }*/
 
     function objetoAjax(){
       var xmlhttp=false;
@@ -120,7 +92,10 @@
   <script type="text/javascript" src="scripts/scriptAñadirCampos.js"></script>
   </head>
   <?php include("funciones.php") ?>
-  <body>
+  <body onLoad="setInterval('contador()',1000);">
+
+  <div id="contador"></div>
+  
   <h5>REALIZA LA PREGUNTA</h5>
 
   <div>

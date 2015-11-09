@@ -109,4 +109,12 @@
       <value> si</value>
     </correctResponse>
   </assessmentItem>
+  <assessmentItem complexity="1" subject="ee">
+    <itemBody>
+      <p>ggg</p>
+    </itemBody>
+    <correctResponse>
+      <value>aaa</value>
+    </correctResponse>
+  </assessmentItem>
 </assessmentItems>
