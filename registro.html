@@ -1,6 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <SCRIPT TYPE="text/javascript">
+       var req = new XMLHttpRequest();
+         function comprobarEmail(correo) { //Asíncrono
+         req.onreadystatechange = function(){
+              if (req.readyState == 4){
+                if(req.responseText=="NO"){
+                  alert("El email no esta registrado en Sistemas Web");
+                  document.getElementById('registrarse').disabled=true;
+                }else{
+                  alert(req.responseText);
+                  document.getElementById('registrarse').disabled=false;
+                }
+              }
+            }
+            //document.getElementsById("respuesta").innerHTML = req.responseText;
+
+          //req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          //req.setRequestHeader("Content-length", params.length);
+          //req.setRequestHeader("Connection", "close");
+
+          //var params = "email="+correo;
+          //alert(params);
+          req.open("GET", "cliente.php?email="+correo, true);
+          req.send();
+          //req.send("pregunta=ddd&respuesta=aaaa&comple=1");
+        }
+
+        function comprobarPass(pass){
+          req.onreadystatechange = function(){
+              if (req.readyState == 4){
+                if(req.responseText=="NO"){
+                  alert("la contraseña es muy debil");
+                  document.getElementById('registrarse').disabled=true;
+                }else{
+                  alert(req.responseText);
+                  document.getElementById('registrarse').disabled=false;
+                }
+              }
+            }
+            //document.getElementsById("respuesta").innerHTML = req.responseText;
+
+          //req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          //req.setRequestHeader("Content-length", params.length);
+          //req.setRequestHeader("Connection", "close");
+
+          //var params = "email="+correo;
+          //alert(params);
+          req.open("GET", "ClientePass.php?pass="+pass, true);
+          req.send();
+        }
+            
+          //alert(req.responseText);
+          //document.getElementById("respuesta2").innerHTML = req.responseText;
+      </SCRIPT>
     <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
     <link rel="stylesheet" type="text/css" href="estilos/register.css" media="screen" />
 	<script type="text/javascript" src="scripts/scriptValores.js"></script>
@@ -16,11 +70,11 @@
    				Apellidos*:<br/>
   				<input type="text" id="apellido" name="apellido"/><br/>
    				Password*:<br/>
-  				<input type="password" id="pass" name="pass"/> <br/>
+  				<input type="password" id="pass" name="pass" onChange="comprobarPass(this.value)"/> <br/>
   				Numero de telefono*:<br/>
   				<input type="text" id="telefono" name="telefono"/><br/>
           Email*:<br/>
-          <input type="text" id="email" name="email" /><br/>     <!--onblur="validarEmail()"-->
+          <input type="text" id="email" name="email" onChange="comprobarEmail(this.value)" /><br/>     <!--onblur="validarEmail()"-->
    				Foto:<br/>
   				<input name="uploadedfile" type="file" />
   				<br/>				
@@ -39,7 +93,7 @@
 
   				<br/>
  
-  				<input type="submit" value="Enviar" />
+  				<input type="submit" id="registrarse" value="Enviar" />
 			</form>
 		
 	</div>

@@ -18,7 +18,7 @@
 				echo "el correo no tiene un formato correcto";
 				return false;
 
-		}else{ 
+		}else{
 			$sql = "SELECT * FROM usuario WHERE Email='{$_POST['email']}'";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0){
