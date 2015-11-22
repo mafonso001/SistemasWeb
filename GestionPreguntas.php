@@ -91,11 +91,16 @@
   <script type="text/javascript" src="scripts/scriptValidadores.js"></script>
   <script type="text/javascript" src="scripts/scriptAñadirCampos.js"></script>
   </head>
-  <?php include("funciones.php") ?>
+  <?php 
+  include("funciones.php") ?>
   <body onLoad="setInterval('contador()',1000);">
 
-  <div id="contador"></div>
+  <?php
+  session_start();
+  if ($_SESSION["tipo"]=="P"){
+  ?>
   
+  <div id="contador"></div>
   <h5>REALIZA LA PREGUNTA</h5>
 
   <div>
@@ -119,8 +124,13 @@
 
   <div id="respuesta2"><b>Aqui se mostrara el resultado de insertar pregunta...</b></div>
 
+  <?php
+  }else{
+    echo "no tienes permisos para acceder a esta seccion";
+  }
+  ?>
   <div id="footer">
-    <a href="index.html">Inicio</a>
+    <a href="index.php">Inicio</a>
   </div>
 </body>
 </html>

@@ -83,6 +83,97 @@ function insertQuestion(){
 		}
 }
 
+function updateQuestions(){
+
+		$conn = connect();
+
+		session_start();
+		$user = $_SESSION["user"];
+
+		if($user == ""){
+			echo "usted no esta conectado";
+			//echo "</br>";
+			//echo "<a href="."Login.html".">Login</a>";
+			$conn->close();
+		}else{
+			if($_POST['Pregunta']=="" || $_POST['Respuesta'] =="" || $_POST['Complejidad']==""){
+
+			echo "debe rellenar todos los campos";
+			//echo "<a href="."insertarPregunta.html".">Volver</a>";
+
+			}else{
+
+				//Aqui insertamos la pregunta en la base de datos
+				$sql = "UPDATE preguntas SET Pregunta='{$_POST['Pregunta']}', Respuesta='{$_POST['Respuesta']}', Complejidad='{$_POST['Complejidad']}'
+						WHERE Id='{$_POST['Id']}'";
+
+				if ($conn->query($sql) === TRUE) {
+					echo "New record created successfully";
+					echo "</br>";
+					echo "<a href=".'"modificarPreguntas.php"'.">Volver</a>";
+				} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+				}
+					$conn->close();
+			}
+		}
+}
+
+function viewAllQuestions(){
+	//Configuracion de la conexion a base de datos
+	$conn = connect();
+	//consulta todos los empleados
+
+	session_start();
+	$user = $_SESSION["user"];
+
+	$result = mysqli_query($conn, "SELECT * FROM preguntas");
+	$row_cnt = $result->num_rows;
+
+	echo "<h3>logueado como =".$user."</h3>";
+	echo "<h3>Numero de preguntas =".$row_cnt."</h3>";
+
+	echo "<table border="."1"." width="."900px".">";
+	echo "<caption>Preguntas</caption>";
+		echo "<tbody>";
+    		echo "<tr>";
+    		  echo "<td>Id</td>";
+    		  echo "<td>Email</td>";
+		      echo "<td>Pregunta</td>";
+		      echo "<th>Respuesta</th>";
+		      echo "<th>Complejidad</th>";
+		      echo "<th>Opciones</th>";
+    		echo "</tr>";
+		echo "</tbody>";
+	echo "</table> ";
+
+	for ($i=0;$i<$row_cnt;$i++) {
+		mysqli_data_seek ($result, $i);
+		$extraido= mysqli_fetch_array($result);
+
+		$tam = 40;
+		echo "<form method=".'"POST"'."action=".'"updateQuestion.php"'.'>';
+	
+		echo "<table border="."1"." width="."900px".">";
+			echo "<tbody>";
+				echo "<tr>";
+			        echo "<td><input type=".'"text"'."id=".'"Id"'."name=".'"Id"'."value='".$extraido['Id']."'/></td>"; 
+			        echo "<td>".$extraido['Email']."</td>";
+					echo "<td><input type=".'"text"'."id=".'"Pregunta"'."name=".'"Pregunta"'."value='".$extraido['Pregunta']."'/></td>"; 
+					echo "<td><input type=".'"text"'."id=".'"Respuesta"'."name=".'"Respuesta"'."value='".$extraido['Respuesta']."'/></td>"; 
+					echo "<td><input type=".'"text"'."id=".'"Complejidad"'."name=".'"Complejidad"'."value='".$extraido['Complejidad']."'/></td>"; 
+					echo "<td><input type=".'"submit"'."value=".'"modificar"'."/></td>";
+				echo "</tr>";
+			echo "</tbody>";
+		echo "</table> ";
+
+		echo "</form>";
+	}
+
+mysqli_free_result($result);
+mysqli_close($conn);
+}
+
 function viewQuestions(){
 
 	//Configuracion de la conexion a base de datos

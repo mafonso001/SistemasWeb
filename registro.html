@@ -28,6 +28,13 @@
           //req.send("pregunta=ddd&respuesta=aaaa&comple=1");
         }
 
+        function passIguales(){
+          if(document.getElementById('pass').value != document.getElementById('pass2').value){
+              alert("las contraseñas no coinciden");
+              document.getElementById('registrarse').disabled=true;
+          }
+        }
+
         function comprobarPass(pass){
           req.onreadystatechange = function(){
               if (req.readyState == 4){
@@ -71,6 +78,8 @@
   				<input type="text" id="apellido" name="apellido"/><br/>
    				Password*:<br/>
   				<input type="password" id="pass" name="pass" onChange="comprobarPass(this.value)"/> <br/>
+          Repetir Password*:<br/>
+          <input type="password" id="pass2" name="pass2" onChange="passIguales()"/> <br/>
   				Numero de telefono*:<br/>
   				<input type="text" id="telefono" name="telefono"/><br/>
           Email*:<br/>
@@ -98,7 +107,7 @@
 		
 	</div>
 	<div id="footer">
-		<a href="layout.html">Inicio</a>
+		<a href="index.php">Inicio</a>
 	</div>
 </body>
 </html>

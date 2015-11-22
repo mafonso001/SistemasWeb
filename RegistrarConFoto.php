@@ -44,8 +44,8 @@
 
 					//echo "<br/>"
 
-					$sql = "INSERT INTO usuario (Nombre, Apellidos, Pass, Telefono, Email, Foto, Especialidad, Tecnologias)
-					VALUES ('{$_POST['nombre']}','{$_POST['apellido']}', '{$_POST['pass']}', '{$_POST['telefono']}', '{$_POST['email']}', '".$target_path."', null, null)";
+					$sql = "INSERT INTO usuario (Nombre, Apellidos, Pass, Telefono, Email, Foto, Especialidad, Tecnologias, Tipo)
+					VALUES ('{$_POST['nombre']}','{$_POST['apellido']}', '{$_POST['pass']}', '{$_POST['telefono']}', '{$_POST['email']}', '".$target_path."', null, null, 'A'");
 
 					if ($conn->query($sql) === TRUE) {
 					    echo "New record created successfully";

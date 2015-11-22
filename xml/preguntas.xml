@@ -117,4 +117,12 @@
       <value>aaa</value>
     </correctResponse>
   </assessmentItem>
+  <assessmentItem complexity="2" subject="1">
+    <itemBody>
+      <p>aaa</p>
+    </itemBody>
+    <correctResponse>
+      <value>qqq</value>
+    </correctResponse>
+  </assessmentItem>
 </assessmentItems>

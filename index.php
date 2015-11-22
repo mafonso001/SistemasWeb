@@ -37,6 +37,12 @@
 	<footer class='main' id='f1'>
 		<p><a href="http://es.wikipedia.org/wiki/Quiz" target="_blank">Que es un Quiz?</a></p>
 		<a href='https://github.com/mafonso001'>Git Hub</a>
+		<?php
+		session_start();
+		if($_SESSION['user']!=""){
+			echo "<a href='logOut.php'>Log Out</a>";
+		}
+		?>
 	</footer>
 </div>
 </body>
